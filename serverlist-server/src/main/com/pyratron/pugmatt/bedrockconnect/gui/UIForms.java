@@ -24,9 +24,8 @@ public class UIForms {
     public static final int DEFAULT_PORT = 19132;
 
     static {
-        mainMenuButtons.add(UIComponents.createButton(BedrockConnect.language.getWording("main", "connectBtn")));
-        mainMenuButtons.add(UIComponents.createButton(BedrockConnect.language.getWording("main", "manageBtn")));
-        mainMenuButtons.add(UIComponents.createButton(BedrockConnect.language.getWording("main", "exitBtn")));
+        //mainMenuButtons.add(UIComponents.createButton(BedrockConnect.language.getWording("main", "connectBtn")));
+        //mainMenuButtons.add(UIComponents.createButton(BedrockConnect.language.getWording("main", "manageBtn")));
 
         // Add deprecated support if "removeBtn" text is still in "main" rootKey
         String removeBtnText = !BedrockConnect.language.getWording("manage", "removeBtn").equals("N/A") ? BedrockConnect.language.getWording("manage", "removeBtn")
@@ -42,6 +41,8 @@ public class UIForms {
         featuredServerButtons.add(UIComponents.createButton("Mineville", "https://i.imgur.com/0K4TDut.png", "url"));
         featuredServerButtons.add(UIComponents.createButton("Galaxite", "https://i.imgur.com/VxXO8Of.png", "url"));
         featuredServerButtons.add(UIComponents.createButton("Pixel Paradise", "https://i.imgur.com/IMe5NSf.jpg", "url"));
+
+        mainMenuButtons.add(UIComponents.createButton(BedrockConnect.language.getWording("main", "exitBtn")));
     }
 
     public static ModalFormRequestPacket createMain(List<String> servers, BedrockServerSession session) {
