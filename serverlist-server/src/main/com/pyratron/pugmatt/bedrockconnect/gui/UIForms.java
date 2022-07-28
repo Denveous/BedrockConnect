@@ -30,19 +30,19 @@ public class UIForms {
         // Add deprecated support if "removeBtn" text is still in "main" rootKey
         String removeBtnText = !BedrockConnect.language.getWording("manage", "removeBtn").equals("N/A") ? BedrockConnect.language.getWording("manage", "removeBtn")
                 : BedrockConnect.language.getWording("main", "removeBtn");
-        manageListButtons.add(UIComponents.createButton(BedrockConnect.language.getWording("manage", "addBtn")));
-        manageListButtons.add(UIComponents.createButton(BedrockConnect.language.getWording("manage", "editBtn")));
-        manageListButtons.add(UIComponents.createButton(removeBtnText));
+        //manageListButtons.add(UIComponents.createButton(BedrockConnect.language.getWording("manage", "addBtn")));
+        //manageListButtons.add(UIComponents.createButton(BedrockConnect.language.getWording("manage", "editBtn")));
+        //manageListButtons.add(UIComponents.createButton(removeBtnText));
 
-        featuredServerButtons.add(UIComponents.createButton("The Hive", "https://forum.playhive.com/uploads/default/original/1X/0d05e3240037f7592a0f16b11b57c08eba76f19c.png", "url"));
+        /*featuredServerButtons.add(UIComponents.createButton("The Hive", "https://forum.playhive.com/uploads/default/original/1X/0d05e3240037f7592a0f16b11b57c08eba76f19c.png", "url"));
         featuredServerButtons.add(UIComponents.createButton("Mineplex", "https://www.mineplex.com/assets/www-mp/img/footer/footer_smalllogo.png", "url"));
         featuredServerButtons.add(UIComponents.createButton("CubeCraft Games", "https://i.imgur.com/aFH1NUr.png", "url"));
         featuredServerButtons.add(UIComponents.createButton("Lifeboat Network", "https://i.imgur.com/LoI7bYx.png", "url"));
         featuredServerButtons.add(UIComponents.createButton("Mineville", "https://i.imgur.com/0K4TDut.png", "url"));
         featuredServerButtons.add(UIComponents.createButton("Galaxite", "https://i.imgur.com/VxXO8Of.png", "url"));
-        featuredServerButtons.add(UIComponents.createButton("Pixel Paradise", "https://i.imgur.com/IMe5NSf.jpg", "url"));
+        featuredServerButtons.add(UIComponents.createButton("Pixel Paradise", "https://i.imgur.com/IMe5NSf.jpg", "url"));*/
 
-        mainMenuButtons.add(UIComponents.createButton(BedrockConnect.language.getWording("main", "exitBtn")));
+        //mainMenuButtons.add(UIComponents.createButton(BedrockConnect.language.getWording("main", "exitBtn")));
     }
 
     public static ModalFormRequestPacket createMain(List<String> servers, BedrockServerSession session) {
@@ -131,22 +131,7 @@ public class UIForms {
     public static MainFormButton getMainFormButton(int btnId, CustomEntry[] customServers, List<String> playerServers) {
         int serverIndex = getServerIndex(btnId, customServers, playerServers);
 
-        if(BedrockConnect.userServers) {
-            switch (btnId) {
-                case 0:
-                    return MainFormButton.CONNECT;
-                case 1:
-                    return MainFormButton.MANAGE;
-                case 2:
-                    return MainFormButton.EXIT;
-            }
-        }
-
-        if(btnId == 0) {
-            return MainFormButton.EXIT;
-        } else if(serverIndex + 1 > playerServers.size() + customServers.length) {
-            return MainFormButton.FEATURED_SERVER;
-        } else if (serverIndex + 1 > playerServers.size() && serverIndex - playerServers.size() < customServers.length) {
+        if (serverIndex + 1 > playerServers.size() && serverIndex - playerServers.size() < customServers.length) {
             return MainFormButton.CUSTOM_SERVER;
         } else {
             return MainFormButton.USER_SERVER;

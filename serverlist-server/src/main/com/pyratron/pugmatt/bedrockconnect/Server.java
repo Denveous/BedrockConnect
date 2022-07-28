@@ -57,7 +57,7 @@ public class Server {
         pong.setMotd(BedrockConnect.language.getWording("serverInfo", "motd"));
         pong.setSubMotd(BedrockConnect.language.getWording("serverInfo", "subMotd"));
         pong.setPlayerCount(0);
-        pong.setMaximumPlayerCount(20);
+        pong.setMaximumPlayerCount(5);
         pong.setGameType("Survival");
         pong.setIpv4Port(Integer.parseInt(port));
         pong.setProtocolVersion(BedrockProtocol.DEFAULT_BEDROCK_CODEC.getProtocolVersion());

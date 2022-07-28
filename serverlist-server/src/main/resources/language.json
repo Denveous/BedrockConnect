@@ -1,10 +1,10 @@
 {
   "serverInfo": {
-    "motd": "Join To Open Server List",
-    "subMotd": "BedrockConnect Server List"
+    "motd": "§a§lServer List",
+    "subMotd": "§d§lI love you Lynsi"
   },
   "main": {
-    "heading": "ServerList",
+    "heading": "Server List",
     "connectBtn" : "Connect to a Server",
     "manageBtn" : "Manage Server List",
     "exitBtn": "Exit Server List"
